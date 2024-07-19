@@ -1,0 +1,201 @@
+<html lang="en">
+    <head> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BJS college</title>
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <img src="Images/BJSLOGO.jpg" style="float: right;padding-top: 30px;">
+        <div class="navigation">
+            <ul>
+                <li><a  href="home.html">Home</a></li>
+                <li><a href="features.html">Feature</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="admin.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            
+            </ul>
+        </div>
+    </nav>
+    <br>
+    <br><br>
+    <!--addmission form-->
+
+    <section id="registration">
+        <div class="reminder">
+            <form action="https://formspree.io/f/xpzewboa" method="POST">
+             <form name="submit-to-google-sheet">
+          <div class="form">
+            <marquee direction="left">
+          <h2>Admission Form</h2></div></marquee>
+        <!--form-->
+<table>
+    <tr>
+        <td>
+           <h3> Name : </h3>
+        </td>
+        <td>
+            <input type="cource" placeholder="Name" name="Name" id="" required>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+           <h3> Phone no : </h3>
+        </td>
+        <td>
+            <input type="number" name="Phone" placeholder="******3456" required>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+           <h3> E-mail Id : </h3>
+        </td>
+        <td>
+            <input  type="email"  name="E-mail" placeholder="bjswagholi428@gmail.com" required>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+           <h3>Gender :</h3>
+        </td>
+        <td>
+              <input name="Gender" type="radio" name="Gender" value="male" required>Male
+              <input name="Gender" type="radio" name="Gender" value="female" required>Female
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <h3>Date Of Birth :</h3>
+        </td>
+        <td>
+            <input type="date" name="Birth Date" id="" required>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <h3>Qualification :</h3>
+        </td>
+        <td>
+            <select name="Qualification ">
+                <option name="Qualification">10th</option>
+                <option name="Qualification">10+2</option>
+                <option name="Qualification">Graduation</option>
+            </select>
+        </td>
+    </tr>
+    <td><h3> Cource With Fee's  : </h3></td>
+          <td>
+             <select name="cource" id=""required>
+                <optgroup label="source">
+                <option value="BCA">BCA ---39,450</option>
+                <option value="M.sc">M.SC--- 32,370</M></option>
+                <option value="M.com">M.Com ---22,890</option>
+                <option value="L.Lb">l.lb--- 55,450</option>
+                <option value="B.sc">B.Sc--- 29,693</option>
+                <option value="M.Pharmacy">M.Pharmacy ---39,450</option>
+                <option value="Machanical Engi.">Machanical Engi.--- 79,450</option>
+                <option value="Design Course">Design Cource ---29,450</option>
+                <option value="Architecture">Architecture--- 39,450</option>
+                </optgroup>
+             </select> 
+          </td>
+          <td>
+          <br>
+              <div class="btn">
+                <br>
+                <button type="submit">Submit Form</button>
+              </div>
+              <span id="success"></span>
+          </td>
+</table>
+             </form>
+        </div>
+             </form>
+
+             <script>
+                const scriptURL = 'https://docs.google.com/spreadsheets/d/1aq9CYPWr1AAAFlORJUIbTtZqGIIUi3BBwFHzEvZycdo/edit#gid=0'
+                const form = document.forms['submit-to-google-sheet']
+                const success = document.getElementById('success');
+                form.addEventListener('submit', e => {
+                  e.preventDefault()
+                  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                    .then(response => {
+                        success.innerHTML="Data Sucessfully Submited"
+                          setTimeout(function() 
+                           {
+                            success.innerHTML=" "
+                          }, 5000);
+                          form.reset();
+                    })
+                    .catch(error => console.error('Error!', error.message))
+                })
+              </script>
+
+        </div>
+   </section>
+
+
+
+    <!--footer-->
+<footer>
+    <div class="footer-col">
+        <h3>Placements</h3>
+        <li>Infosys</li>
+        <li>Barcley</li>
+        <li>Wipro</li>
+        <li>Sweege</li>
+    </div>
+    <div class="footer-col">
+        <h3>Quick Links</h3>
+        <li>Job</li>
+        <li>Brand Assets</li>
+        <li>Investor Relations</li>
+        <li>Terms Of Service</li>
+    </div>
+    <div class="footer-col">
+        <h3>Features</h3>
+        <li>Manage Reputation</li>
+        <li>Power ToolS</li>
+        <li>Managed Website</li>
+        <li>Marketing Service</li>
+    </div>
+    <div class="footer-col">
+        <h3>Resources</h3>
+        <li>Guides</li>
+        <li>Research</li>
+        <li>Experts</li>
+        <li>Marketing Service</li>
+    </div>
+    <div class="footer-col">
+        <h3>News Latter</h3>
+        <p> You can trust us. we only send promo offers,</p>
+        
+    </form>
+    </div>
+    <div class="copyright">
+        <p>copyright 02021 All rights reserved | This templet is made by Shubham-Avishkar</p>
+        <div class="pro-link">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-linkedin-in"></i>
+        </div>
+    </div>
+</footer>
+
+
+
+    </body>
+    </html>
